@@ -29,8 +29,8 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
   String _response = '';
 
   Future<void> _sendMessage(String message) async {
-    final String apiUrl = 'https://localhost:8080/chat'; // Replace with your API endpoint
-    final response = await http.get(Uri.parse('$apiUrl?message=$message'));
+    final String apiUrl = 'http://localhost:8080/chat'; // Replace with your API endpoint
+    final response = await http.get(Uri.parse('$apiUrl/$message'));
 
     if (response.statusCode == 200) {
       setState(() {
